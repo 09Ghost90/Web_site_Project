@@ -1,0 +1,48 @@
+/* Estilo para o container da seção */
+.agendar {
+    position: relative;
+    height: 100vh; /* Ocupa a altura total da janela */
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+    justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
+    overflow: hidden;
+}
+
+/* Efeito de parallax no background */
+.background_agendar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/background.jpg') no-repeat center center; /* Imagem centralizada */
+    background-size: cover; /* Ajusta o tamanho para cobrir a área */
+    will-change: transform;
+    transform: translateZ(0); /* Melhora o desempenho */
+}
+
+/* Efeito ao rolar a página */
+.background_agendar {
+    background-attachment: fixed; /* Efeito parallax */
+}
+
+/* Botão no centro */
+.agendar button {
+    position: relative;
+    z-index: 1; /* Para o botão ficar acima do background */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fc2727; /* Cor do texto vermelha */
+    background: transparent; /* Fundo transparente */
+    border: 2px solid #fc2727; /* Borda vermelha */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.agendar button:hover {
+    background: rgba(252, 39, 39, 0.2); /* Fundo vermelho transparente ao passar o mouse */
+    color: #fff; /* Texto branco */
+}

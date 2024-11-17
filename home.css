@@ -1,0 +1,164 @@
+/* Estilos para a seção "Home" */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: black;
+    color: white;
+}
+
+/* Container que organiza imagem e texto */
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    gap: 10px;
+}
+
+/* Imagem com efeito de transição */
+.home-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: -70px; /* Move a imagem mais para a esquerda */
+}
+
+.home-image img {
+    width: 100%;
+    max-width: 590px;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: all 0.3s ease;
+    transform: translateX(-30px); /* Desloca a imagem internamente para a esquerda */
+}
+
+/* Gradiente que dá o efeito de mescla */
+.home-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px; /* Ajusta o gradiente para corresponder ao deslocamento */
+    height: 100%;
+    width: calc(100% + 50px); /* Alarga o gradiente para cobrir a área deslocada */
+    background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+
+/* Texto à direita */
+.home-text {
+    flex: 1;
+    z-index: 2; /* Certifica-se de que o texto esteja acima da imagem */
+    text-align: justify;
+    padding: 20px;
+}
+
+.home-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ff4444;
+}
+
+.home-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.home-text p {
+    text-indent: 1.5em;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Efeito hover na imagem */
+.home-image:hover img {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+/* Responsividade: Telas médias */
+@media (max-width: 768px) {
+    #home {
+        padding: 30px 10px; /* Reduz o espaçamento em dispositivos menores */
+    }
+
+    .home-content {
+        flex-direction: column; /* Reorganiza o layout em coluna */
+        align-items: center; /* Centraliza os elementos */
+        gap: 20px; /* Espaçamento entre texto e imagem */
+    }
+
+    .home-image {
+        margin-left: 0; /* Remove o deslocamento da imagem */
+        justify-content: center; /* Centraliza a imagem */
+    }
+
+    .home-image img {
+        max-width: 100%; /* A imagem ocupa toda a largura */
+        transform: none; /* Remove o deslocamento interno */
+    }
+
+    .home-image::after {
+        left: 0; /* Alinha o gradiente com a imagem */
+        width: 100%; /* Gradiente acompanha a largura da imagem */
+    }
+
+    .home-text {
+        font-size: 1.2em;
+        text-indent: 1.5em;
+        text-align: justify;
+        padding: 20px; /* Adiciona espaçamento lateral */
+    }
+
+    .home-text h1 {
+        font-size: 2rem; /* Ajusta o tamanho da fonte */
+    }
+
+    .home-text h2 {
+        font-size: 1.5rem; /* Ajusta o tamanho da fonte */
+    }
+
+    .home-text p {
+        font-size: 1rem; /* Ajusta o tamanho do texto */
+    }
+}
+
+/* Responsividade: Telas pequenas */
+@media (max-width: 700px) {
+    .home-content {
+        flex-direction: column; /* Texto ocupa toda a área */
+        align-items: center;
+        gap: 15px; /* Ajusta o espaçamento */
+    }
+
+    .home-image {
+        display: none; /* Remove a imagem */
+    }
+
+    .home-text {
+        text-align: justify; /* Centraliza o texto */
+        text-indent: 1.5em;
+        padding: 25px; /* Reduz o espaçamento */
+    }
+
+    .home-text h1 {
+        font-size: 1.8rem; /* Tamanho menor do título */
+    }
+
+    .home-text h2 {
+        font-size: 1.4rem; /* Ajusta tamanho do subtítulo */
+    }
+
+    .home-text p {
+        font-size: 16px; /* Texto mais compacto */
+    }
+}

@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #fff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#left {
+    text-align: center;
+}
+
+/* Seção de serviços */
+#servicos {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#servicos h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+
+#servicos h1::before {
+    left: -60px;
+}
+
+#servicos h1::after {
+    right: -60px;
+}
+
+#servicos p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+#servicos .cards-container .card p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Container de cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    background-image: url('corte.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px tgba(0,0,0, 0.2);
+    overflow: hidden;
+    background-color: #323232; /* Cinza médio para os cards */
+    border: 2px solid #fc2727; /* Borda vermelha com tonalidade mais clara */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card p {
+    padding-top: 20px;
+    font-size: 16x;
+    line-height: 1.5;
+    color: #ddd;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+.card:hover {
+    transform: scanle(1.05);
+    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 70%;
+    }
+
+}

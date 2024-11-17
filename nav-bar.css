@@ -1,0 +1,102 @@
+/* Configuração inicial da barra de navegação */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza os itens */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px; /* Aumenta a altura da navbar */
+    background-color: rgba(0, 0, 0, 0.95); /* Fundo semi-transparente */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo centralizada e maior */
+.navbar .logo {
+    position: absolute;
+    left: 196px;
+    top: -10%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+}
+
+.navbar .logo img {
+    height: 120px; /* Aumenta o tamanho da logo */
+    width: 120px; /* Mantém a proporção da imagem */
+}
+
+/* Menu hambúrguer alinhado à direita */
+.hamburger-menu {
+    position: absolute;
+    right: 20px; /* Alinha à direita */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo para o menu expansível */
+.nav-links {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 100px; /* Ajustado para acompanhar a altura da navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links ul li {
+    margin: 15px 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links ul li a:hover {
+    color: #ff4444; /* Cor de destaque */
+}
+
+/* Exibe o menu expansível quando ativado */
+.nav-links.active {
+    display: flex;
+}
+
+/* Configuração para dispositivos móveis */
+@media (max-width: 700px) {
+    .hamburger-menu {
+        display: flex; /* Exibe o menu hambúrguer */
+    }
+
+    nav {
+        display: none; /* Esconde o menu padrão */
+    }
+}

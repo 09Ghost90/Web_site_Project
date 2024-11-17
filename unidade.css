@@ -1,0 +1,75 @@
+/* Estilo para a seção "Unidades" */
+#unidades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: black;
+    color: white;
+}
+
+/* Container que organiza texto e mapa */
+.unidade-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    gap: 20px;
+}
+
+/* Texto à esquerda */
+.unidade-text {
+    flex: 1;
+    text-align: justify;
+    padding: 20px;
+    z-index: 2;
+}
+
+.unidade-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ff4444;
+}
+
+.unidade-text p {
+    text-indent: 1.5em;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Mapa à direita */
+.unidade-maps {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unidade-maps iframe {
+    width: 100%;
+    max-width: 590px;
+    height: auto;
+    border: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    #unidades {
+        flex-direction: column;
+    }
+
+    .unidade-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .unidade-maps iframe {
+        max-width: 100%;
+        height: 200px;
+    }
+}
